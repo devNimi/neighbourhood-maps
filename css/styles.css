@@ -11,3 +11,34 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+#pac-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+}
+
+table {
+  font-size: 12px;
+}
+
+.hotelIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.iw_table_row {
+  height: 18px;
+}
+.iw_attribute_name {
+  font-weight: bold;
+  text-align: right;
+}
+.iw_table_icon {
+  text-align: right;
+}
