@@ -28,13 +28,13 @@ function initMap() {
     content: document.getElementById('info-content')
   });
 
+  // use PlacesServices to get more details about a place using getDetails(), passinging in the place id
+  service = new google.maps.places.PlacesService(map);
+
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
   searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // use PlacesServices to get more details about a place using getDetails(), passinging in the place id
-  service = new google.maps.places.PlacesService(map);
+  searchBox.setBounds(map.getBounds());
 
   // Bias the SearchBox results towards current map's viewport.
   map.addListener('bounds_changed', function() {
@@ -44,22 +44,42 @@ function initMap() {
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener('places_changed', onPlaceChange);
+
+  // Listen for the event fired when the user clicks on 'search-button'
+  $("#search-button").click(textSearchPlaces);
 }
 
 function onPlaceChange() {
   places = searchBox.getPlaces();
   console.log(places);
 
+  createPlaceMarkers(places);
+}
+
+// This function fire when the user click search-button on the places search.
+// It will do a nearby search using the entered query string or place.
+function textSearchPlaces() {
+  var bounds = map.getBounds();
+  hideMarkers(markers);
+  var placesService = new google.maps.places.PlacesService(map);
+  placesService.textSearch({
+    query: $("#pac-input").val(),
+    bounds: bounds
+  }, function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      createPlaceMarkers(results)
+    }
+  });
+}
+
+function createPlaceMarkers(places) {
   if (places.length == 0) {
     // TODO: LET THE USER KNOW
     return;
   }
 
   // Clear out the old markers.
-  markers.forEach(function(marker) {
-    marker.setMap(null);
-  });
-  markers = [];
+  hideMarkers(markers)
 
   // For each place, get the icon, name and location.
   var bounds = new google.maps.LatLngBounds();
@@ -111,6 +131,7 @@ function populateInfoWindow(marker, placeId, infowindow) {
     placeId: placeId
   }, function(requestedPlace, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
+      // placeDetailsInfoWindow.setZIndex(9999);
       placeDetailsInfoWindow.open(map, marker);
       buildInfoWindowContent(requestedPlace);
     }
@@ -170,4 +191,13 @@ function buildInfoWindowContent(place) {
   } else {
     document.getElementById('iw-website-row').style.display = 'none';
   }
+}
+
+// This function will loop through the listings and hide them all.
+function hideMarkers(markers) {
+  markers.forEach(function(marker) {
+    marker.setMap(null);
+  });
+  markers = [];
+  console.log('markers hidden');
 }
