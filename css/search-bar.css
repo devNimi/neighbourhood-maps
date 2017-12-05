@@ -4,8 +4,6 @@
   font-family: 'entypo', sans-serif;
 }
 
-.search-bar-container-container {}
-
 .search-bar-container {
   width: 90vw;
   margin-top: 5vh;
@@ -60,14 +58,14 @@
   padding: 10px 15px;
 }
 
-.search-bar-container .search:focus + #search-button {
+.search-bar-container .search:focus + .search-button {
   height: 60px;
   margin-right: -2vw;
   max-width: 80px;
   color: #533687;
 }
 
-.search-bar-container #search-button {
+.search-bar-container .search-button {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -85,4 +83,49 @@
   font-size: 21px;
   outline: none;
   cursor: pointer;
+}
+
+/* properties overide for show-search-bar button, they follow similar styles as of search bar, just with few modification*/
+/* this is small search icon which is shown to user when main search bar is hidden*/
+#show-search-bar-button-container {
+  width: 10vw;
+  margin-top: 5vh;
+  margin-left: 85vw;
+  z-index: 3;
+  position: absolute;
+  padding: 2px;
+  display: flex;
+  background: initial;
+  box-shadow: initial;
+  display: none;
+}
+#search-bar-override {
+  width: 100%;
+  display: flex;
+  box-shadow: initial;
+  flex-direction: row-reverse;
+}
+
+#show-search-bar-button {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+  order: 3;
+  max-width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+  font-size: 21px;
+  outline: none;
+  cursor: pointer;
+
+  box-shadow: 1px 1px 5px 2px #5d646b;
+  border: 1px solid #004085;
+  border-radius: 32px;
+}
+
+#show-search-bar-button span.entypo-search {
+  color: #464a4e;
 }

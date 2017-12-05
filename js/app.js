@@ -1,4 +1,4 @@
-var map, places, infoWindow;
+var map, places, placeDetailsInfoWindow;
 var searchBox;
 var service;
 var markers = [];
@@ -46,8 +46,27 @@ function initMap() {
   searchBox.addListener('places_changed', onPlaceChange);
 
   // Listen for the event fired when the user clicks on 'search-button'
-  $("#search-button").click(textSearchPlaces);
+  $(".search-button").click(textSearchPlaces);
+
+  // brigs the search bar back
+  $('#show-search-bar-button-container').click(function(){
+    //close any placeDetailsInfoWindow if opened
+    placeDetailsInfoWindow.close();
+    //hide itself
+    $('#show-search-bar-button-container').hide()
+    //show search bar
+    $('.search-bar-container').show();
+  })
+
+  //brings the search bar back when infowindow is closed
+  google.maps.event.addListener(placeDetailsInfoWindow,'closeclick',function(){
+    //hide small search button
+    $('#show-search-bar-button-container').hide()
+    //show search bar
+    $('.search-bar-container').show();
+  });
 }
+
 
 function onPlaceChange() {
   places = searchBox.getPlaces();
@@ -139,6 +158,13 @@ function populateInfoWindow(marker, placeId, infowindow) {
 }
 
 function buildInfoWindowContent(place) {
+
+  // hide the search bar
+  // this way info window can be properly seen
+  $('.search-bar-container').hide();
+  // show only search button to facilate user to bring the search bar back
+  $('#show-search-bar-button-container').show();
+
   document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
       'src="' + place.icon + '"/>';
   if(place.url) {

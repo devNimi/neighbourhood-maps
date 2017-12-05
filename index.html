@@ -5,20 +5,31 @@
     <meta name="viewport" content="initial-scale=1.0">
     <title>Neighbourhood Map</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/search-bar.css">
   </head>
   <body>
 
-  <div class="search-bar-container">
+  <div class="animated bounceInRight search-bar-container">
     <div class="search-bar">
       <input id="pac-input" class="search" placeholder="Search..." />
-      <button id="search-button"><span class="entypo-search"></span></button>
+      <button class="search-button"><span class="entypo-search"></span></button>
     </div>
   </div>
 
+  <!-- hidden by default, becomes visible after search results are return from PlacesService
+      * when clicked brings the search bar back along with hiding itself
+      * this was implement due workaround infoWindow problem (infoWindow always opened below search bar)
+      * uses the same CSS properties of original search bar
+  -->
+  <!-- this is small search icon which is shown to user when main search bar is hidden -->
+  <div id="show-search-bar-button-container" class="animated fadeIn">
+    <div id="search-bar-override" class="">
+      <button id="show-search-bar-button" class=""><span class="entypo-search"></span></button>
+    </div>
+  </div>
 
-    <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
     <div id="map"></div>
 
     <div style="display: none">
