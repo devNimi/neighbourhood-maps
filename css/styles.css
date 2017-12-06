@@ -1,3 +1,17 @@
+:root {
+  /* color palate from: https://www.materialpalette.com/indigo/pink */
+  --dark-primary-color: #303F9F;
+  --primary-color: #3F51B5;
+  --light-primary-color: #C5CAE9;
+  --text-icon-color:#FFFFFF;
+  --primary-text-color:#212121;
+  --secondary-text-color:#757575;
+  --divider-color: #BDBDBD;
+  --accent-color: #FF4081;
+}
+
+
+
 html, body {
   margin: 0;
   padding: 0;
