@@ -88,9 +88,9 @@
 /* properties overide for show-search-bar button, they follow similar styles as of search bar, just with few modification*/
 /* this is small search icon which is shown to user when main search bar is hidden*/
 #show-search-bar-button-container {
-  width: 10vw;
+  width: 15vw;
   margin-top: 5vh;
-  margin-left: 85vw;
+  margin-left: 80vw;
   z-index: 3;
   position: absolute;
   padding: 2px;
