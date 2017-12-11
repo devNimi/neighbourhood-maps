@@ -8,7 +8,7 @@
   width: 90vw;
   margin-top: 5vh;
   margin-left: 5vw;
-  z-index: 3;
+  z-index: 1;
   position: absolute;
   background: var(--primary-color);
   padding: 2px;
@@ -16,8 +16,8 @@
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   box-shadow: 0 2px 0 0px rgba(0, 0, 0, 0.1);
 }
 
