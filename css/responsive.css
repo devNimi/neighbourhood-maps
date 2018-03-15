@@ -44,4 +44,11 @@
   -o-transform: translateX(-40vw);
   transform: translateX(-40vw);
   }
+  .animate-toggle-sidebar-button {
+    -webkit-transform: translateX(-40vw) rotateZ(-180deg);
+    -moz-transform: translateX(-40vw) rotateZ(-180deg);
+    -ms-transform: translateX(-40vw) rotateZ(-180deg);
+    -o-transform: translateX(-40vw) rotateZ(-180deg);
+    transform: translateX(-40vw) rotateZ(-180deg);
+  }
 }

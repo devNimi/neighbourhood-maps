@@ -24,6 +24,20 @@ html, body {
   height: 100vh;
   width: 100vw
 }
+#toggle-full-screen-btn {
+    position: absolute;
+    z-index: 3;
+    right: 5vw;
+    top: calc(5vh + 65px);
+    color: var(--dark-primary-color);
+    background-color: var(--text-icon-color);
+    border-color: var(--primary-color);
+}
+#toggle-full-screen-btn:hover {
+  cursor: pointer;
+  color: var(--accent-color);
+  border-color: : var(--accent-color);
+}
 .blur {
   opacity: 0.5;
 }

@@ -3,7 +3,33 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0">
+    <!-- https://developers.google.com/web/fundamentals/native-hardware/fullscreen/#launching_a_page_fullscreen_from_home_screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- icons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>Neighbourhood Map</title>
+
+    <!-- https://developers.google.com/web/fundamentals/native-hardware/fullscreen/#launching_a_page_fullscreen_from_home_screen -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- stylesheets -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,7 +44,7 @@
 
   <div class="animated bounceInRight search-bar-container">
     <div class="search-bar">
-      <input id="pac-input" class="search" placeholder="Search..." />
+      <input id="pac-input" class="search" placeholder="Coffee, Pizza,  Hotels or what..?" />
       <button class="search-button"><span class="entypo-search"></span></button>
     </div>
   </div>
@@ -34,16 +60,17 @@
       <button id="show-search-bar-button" class=""><span class="entypo-search"></span></button>
     </div>
   </div>
-
-  <button type="button" id="test-button" name="button">test me</button>
+  <button type="button" id="toggle-full-screen-btn" class="btn btn-sm">
+    <i class="fa fa-expand" aria-hidden="true"></i> Fullscreen
+  </button>
     <div id="map"></div>
     <!-- for mobile devices -->
     <div class="toggle-sidebar-button" id="toggle-sidebar-button-mobile">
-      <i class="fa fa-angle-up fa-5x animated pulse infinite" aria-hidden="true"></i>
+      <i class="fa fa-angle-double-up fa-5x animated pulse infinite" aria-hidden="true"></i>
     </div>
     <!-- for devices bigger than mobile -->
     <div class="toggle-sidebar-button" id="toggle-sidebar-button">
-      <i class="fa fa-angle-left fa-5x animated pulse infinite" aria-hidden="true"></i>
+      <i class="fa fa-angle-double-left fa-5x animated pulse infinite" aria-hidden="true"></i>
     </div>
 
     <div id="sidebar-container">
@@ -233,6 +260,8 @@
     async defer></script>
     <script src="js/app.js"></script>
     <script src="js/sidebar.js"></script>
+    <!-- https://github.com/sindresorhus/screenfull.js -->
+    <script src="js/screenfull.min.js"></script>
 
   </body>
 </html>

@@ -1,6 +1,33 @@
 $( document ).ready(function() {
-    $("#pac-input").focus();
-  
+    // $("#pac-input").focus();
+
+    // fullscreen api
+    // https://github.com/sindresorhus/screenfull.js
+    $('#toggle-full-screen-btn').on('click', () => {
+      if (screenfull.enabled) {
+        // Requests fullscreen if not active, otherwise exits.
+        // https://github.com/sindresorhus/screenfull.js#toggle
+        screenfull.toggle();
+        // Detect fullscreen change
+        // https://github.com/sindresorhus/screenfull.js#detect-fullscreen-change
+        screenfull.on('change', () => {
+        		if(screenfull.isFullscreen){
+              $('#toggle-full-screen-btn').html('<i class="fa fa-compress" aria-hidden="true"></i> Fullscreen');
+            } else {
+              $('#toggle-full-screen-btn').html('<i class="fa fa-expand" aria-hidden="true"></i> Fullscreen');
+            }
+        	});
+
+        //log if there is any error
+        screenfull.on('error', event => {
+        		console.error('Failed to enable fullscreen', event);
+        	});
+
+      } else {
+        // Ignore or do something else
+      }
+    });
+
 });
 
 var knockoutBinding;

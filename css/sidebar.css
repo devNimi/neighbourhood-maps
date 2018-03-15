@@ -20,7 +20,7 @@
 
 .toggle-sidebar-button {
   position: absolute;
-  color: var(--accent-color);
+  color: var(--text-icon-color);
   cursor: pointer;
   z-index: 3;
   -webkit-transition: all .7s ease;
@@ -28,6 +28,9 @@
   -ms-transition: all .7s ease;
   -o-transition: all .7s ease;
   transition: all .7s ease;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: var(--accent-color);
+  text-shadow: 3px 3px 10px var(--text-icon-color);
 }
 #toggle-sidebar-button-mobile {
   top: 85vh;
@@ -280,7 +283,7 @@ transform: translateY(-100vh);
   height: 36px;
   width: 36px;
   background-size: cover;
-  background-image: url("http://maps.gstatic.com/tactile/omnibox/anonymous_v3.png");
+  background-image: url("https://maps.gstatic.com/tactile/omnibox/anonymous_v3.png");
   background-position: center;
   border-radius: 50%;
   position: absolute;
