@@ -1,0 +1,47 @@
+@media screen and (min-width: 768px) {
+  #toggle-sidebar-button-mobile {
+    /* visibility: hidden; */
+    display: none;
+  }
+  #toggle-sidebar-button {
+    /* visibility: visible; */
+    display: inherit;
+  }
+  /* change sidebar width, relocate it to right of screen right: -70vw (earlier is was at bottom of screen top -100vh)  */
+  #sidebar-container {
+    height: 100vh;
+    width: 70vw;
+    top: 0;
+    right: -70vw;
+  }
+  /* tranform sidebar and toggleButton as per it's new position */
+  .toggle-side-bar {
+  -webkit-transform: translateX(-70vw);
+  -moz-transform: translateX(-70vw);
+  -ms-transform: translateX(-70vw);
+  -o-transform: translateX(-70vw);
+  transform: translateX(-70vw);
+  }
+  .animate-toggle-sidebar-button {
+    -webkit-transform: translateX(-70vw) rotateZ(-180deg);
+    -moz-transform: translateX(-70vw) rotateZ(-180deg);
+    -ms-transform: translateX(-70vw) rotateZ(-180deg);
+    -o-transform: translateX(-70vw) rotateZ(-180deg);
+    transform: translateX(-70vw) rotateZ(-180deg);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #sidebar-container {
+    width: 40vw;
+    top: 0;
+    right: -40vw;
+  }
+  .toggle-side-bar {
+  -webkit-transform: translateX(-40vw);
+  -moz-transform: translateX(-40vw);
+  -ms-transform: translateX(-40vw);
+  -o-transform: translateX(-40vw);
+  transform: translateX(-40vw);
+  }
+}

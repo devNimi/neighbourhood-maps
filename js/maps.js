@@ -13,7 +13,8 @@ function initMap() {
     mapTypeControl: false,
     panControl: false,
     zoomControl: false,
-    streetViewControl: false
+    streetViewControl: false,
+    fullscreenControl: false
   });
 
   //info window for searced 'place details'
@@ -41,11 +42,11 @@ function initMap() {
   // Listen for the event fired when the user clicks on 'search-button'
   $(".search-button").click(textSearchPlaces);
 
-  // brigs the search bar back
+  // brings the search bar back when user clicks on that small search button
   $('#show-search-bar-button-container').click(function(){
     //close any placeDetailsInfoWindow if opened
     placeDetailsInfoWindow.close();
-    //hide itself
+    //hide the small search button itself
     $('#show-search-bar-button-container').hide()
     //show search bar
     $('.search-bar-container').show();
@@ -66,7 +67,7 @@ function onPlaceChange() {
   // console.log(places);
 
   createPlaceMarkers(places);
-  // pass in place data to knockout data model, which in turns activa sidebar
+  // pass in place data to knockout data model, which in turns activate the sidebar
   activateSidebar(places, service);
 }
 
@@ -125,6 +126,7 @@ function createPlaceMarkers(places) {
       // we pass in the unique place id of the place
       // later we'll use this place id to make a request to PlacesServices
       var placeId = place.place_id;
+      // TODO: show a 'tip' to user that markers are clickable
       populateInfoWindow(this, placeId, placeDetailsInfoWindow);
     });
 

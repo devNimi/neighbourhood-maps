@@ -1,26 +1,90 @@
+$( document ).ready(function() {
+    $("#pac-input").focus();
+  
+});
+
 var knockoutBinding;
 
 var placeData = [
-  {
-    name: 'nimeh chains of hotels',
-    vicinity: '341 W 36th St, New York, NY 10018, USA',
-    formatted_phone_number: '(212) 542-8990',
-    rating: '4.7',
-    thumbnail: 'https://lh3.googleusercontent.com/p/AF1QipNzSbmLqOLQOMYQW8sGSfM63LhAuA7EmaIdvcr_=w100-h100-k',
-    openingHours: {open_now: false}
-  }
+  // {
+  //   formatted_address: '952, NYC, NY',
+  //   formatted_phone_number: '(212) 542-8990',
+  //   name: 'nimesh chains of hotels',
+  //   openingHours: {
+  //                   open_now: false,
+  //                   // periods:
+  //                 },
+  //   rating: '4.7',
+  //   reviews: [
+  //     {
+  //       author_name: "Nimesh Jain",
+  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+  //       language: "en",
+  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+  //       rating: 4,
+  //       relative_time_description: "2 weeks ago",
+  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+  //       time :1515877906,
+  //     },
+  //     {
+  //       author_name: "Kunal Pancholi",
+  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+  //       language: "en",
+  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+  //       rating: 4,
+  //       relative_time_description: "2 weeks ago",
+  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+  //       time :1515877906,
+  //     },
+  //     {
+  //       author_name: "Ajay Bhandari",
+  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+  //       language: "en",
+  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+  //       rating: 4,
+  //       relative_time_description: "2 weeks ago",
+  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+  //       time :1515877906
+  //     },
+  //     {
+  //       author_name: "Ankit Vijay",
+  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+  //       language: "en",
+  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+  //       rating: 4,
+  //       relative_time_description: "2 weeks ago",
+  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+  //       time :1515877906
+  //     },
+  //     {
+  //       author_name: "Shivam Gera",
+  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+  //       language: "en",
+  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+  //       rating: 4,
+  //       relative_time_description: "2 weeks ago",
+  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+  //       time :1515877906
+  //     }
+  //   ],
+  //   thumbnail: 'https://lh3.googleusercontent.com/p/AF1QipNzSbmLqOLQOMYQW8sGSfM63LhAuA7EmaIdvcr_=w100-h100-k',
+  //   types: ['lodging', 'cafe' ],
+  //   url: 'https://nimeshjain.com',
+  //   vicinity: '341 W 36th St, New York, NY 10018, USA',
+  //   website: 'http://nimeshjain.com'
+  // }
 ];
-
+// NOTE:
+/*
+  * this function is called from onPlaceChange() functions in maps.js
+  * whenever user selects a prediction from search bar this function gets triggeed from maps.js
+*/
 function activateSidebar(places, service) {
-  /*
-    * this function is called from onPlaceChange() functions in maps.js
-    * basically whenever user selects a prediction from search bar it triggers
-    * for a new search new places will be returned, placeData needs to be emptied
-  */
+  // for a new search,  new 'places' array will be returned, placeData needs to be emptied
   placeData = [];
   places.forEach(function(place, index){
-    /* to prevent OVER_QUERY_LIMIT, we'll wait for some time
-    see the code snippet below */
+    /* to prevent OVER_QUERY_LIMIT, we'll wait for some time.....
+    see the code snippet below for more info */
     /*
     service.getDetails({
       placeId: place.place_id
@@ -34,12 +98,13 @@ function activateSidebar(places, service) {
     /*
       * things can be done the way mentioned above, but if we'll do that we'll hit OVER_QUERY_LIMIT (https://developers.google.com/maps/premium/previous-licenses/articles/usage-limits)
       * In the snippet aboove we'll be making too much  getDetails() request in a very short amount of time (we know how fast forEach works :D)
-      * We keep getting OVER_QUERY_LIMIT status after the 10th requestedPlace
+      * We'll be getting OVER_QUERY_LIMIT status after the 10th requestedPlace
       * So what we gonna do it, after making the 10th request we gonna wait for few seconds and then make the requestedPlace
-      * this we don't get error and Knockout takes care of updating the next 10 list for us
+      * this way we'll not hit OVER_QUERY_LIMIT error and KnockoutJS will takes care of updating the next 10 list for us
       * below is the workaround
     */
 
+    // aggeration time for next 10 request would be around 5000ms only... think! :P
     if(index > 9) {
       setTimeout(function(){
         // all requests to placesService after the 10th request will be dispatched after 5 seconds of delay
@@ -62,10 +127,13 @@ function activateSidebar(places, service) {
         }
       });
     }
-
   });
   console.log(placeData);
-
+  // sends back user to place-list-pane if user is ony any other pane
+  hidePlaceDetailsPane();
+  hidePlaceReviewsPane();
+  showPlaceListPane();
+  $('.sidebar-error-message').hide();
 }
 
 // each Place in knockout observable array have following
@@ -74,7 +142,12 @@ var Place = function(data) {
   // PlacesService responses could be find here
   var self = this;
   self.name = data.name;
-  self.formattedPhoneNumber = data.formatted_phone_number;
+  if (data.formatted_phone_number) {
+    self.formattedPhoneNumber = data.formatted_phone_number;
+  } else {
+    self.formattedPhoneNumber = "No details were found"
+  }
+
   self.formattedAddress = data.formatted_address;
   self.internationalPhoneNumber = data.international_phone_number;
   self.icon = data.icon;
@@ -86,15 +159,35 @@ var Place = function(data) {
   self.utcOffset = data.utc_offset;
   self.vicinity = data.vicinity;
   self.website = data.website;
+  if (data.website) {
+    // extracting the part of website after 'https://' pr 'http://'
+    self.websiteText = data.website.split('://')[1];
+  } else {
+    self.websiteText = "No details were found";
+  }
+
   // Google Maps URL
   self.url = data.url;
   // url of the first photo in data.photos, retrived by using getUrl() method. https://developers.google.com/maps/documentation/javascript/places#places_photos
   if(data.photos) {
-    self.thumbnail = data.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100});;
+    self.thumbnail = data.photos[0].getUrl({'maxWidth': 100, 'maxHeight': 100});
   } else {
     // if no image found, use the icon image
     self.thumbnail = data.icon;
   }
+  // retriving url of photos for 'more info about the place section'
+  self.photosArray = ko.observableArray([]);
+  if(data.photos) {
+    /* photosArray should have at least one photo url for our carousel to work
+      carousel will work even if we have less than 10 photos url in photosArray
+    */
+    data.photos.forEach(function(photo, index){
+      self.photosArray.push(data.photos[index].getUrl({'maxHeight': 300}))
+    });
+  } else {
+    self.photosArray.push("images/no-image-found.jpg")
+  }
+
 
   self.openNow = true;
   if(data.opening_hours) {
@@ -109,13 +202,19 @@ var PlaceViewModel = function() {
   placeData.forEach(function(placeItem) {
     self.placeList.push(new Place(placeItem));
   })
-  this.updatePlaces = function() {
+  self.currentPlace = ko.observable(self.placeList()[0]);
+  self.setPlace = function() {
+        self.currentPlace(this);
+        showMoreDetails();
+      }
+  self.updatePlaces = function() {
     console.log('UI REFRESH');
     self.placeList.removeAll();
     placeData.forEach(function(placeItem, index) {
       self.placeList.push(new Place(placeItem));
     })
   }
+
 }
 
 // we'll be accesing PlaceViewModel's updatePlaces() method outside PlaceViewModel, to work workaround that
@@ -123,7 +222,3 @@ var PlaceViewModel = function() {
 // https://stackoverflow.com/questions/10643940/access-viewmodel-in-javascript-function-outside-viewmodels-scope
 knockoutBinding = { viewModel: new PlaceViewModel() };
 ko.applyBindings(knockoutBinding.viewModel);
-
-$( document ).ready(function() {
-    $("#pac-input").focus();
-});

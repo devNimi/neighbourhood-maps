@@ -24,7 +24,12 @@ html, body {
   height: 100vh;
   width: 100vw
 }
-
+.blur {
+  opacity: 0.5;
+}
+.avoid-clicks {
+  pointer-events: none;
+}
 /*overiding pac-container default styles -
   https://developers.google.com/maps/documentation/javascript/places-autocomplete#style_autocomplete */
 .pac-container {
