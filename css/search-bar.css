@@ -1,8 +1,4 @@
-@import url(http://weloveiconfonts.com/api/?family=entypo);
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
-[class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
-}
 
 .search-bar-container {
   width: 90vw;
@@ -129,6 +125,6 @@
   font-size: 25px;
 }
 
-#show-search-bar-button span.entypo-search {
+#show-search-bar-button span{
   color: var(--text-icon-color);
 }
