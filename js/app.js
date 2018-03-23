@@ -33,73 +33,73 @@ $( document ).ready(function() {
 var knockoutBinding;
 
 var placeData = [
-  // {
-  //   formatted_address: '952, NYC, NY',
-  //   formatted_phone_number: '(212) 542-8990',
-  //   name: 'nimesh chains of hotels',
-  //   openingHours: {
-  //                   open_now: false,
-  //                   // periods:
-  //                 },
-  //   rating: '4.7',
-  //   reviews: [
-  //     {
-  //       author_name: "Nimesh Jain",
-  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
-  //       language: "en",
-  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
-  //       rating: 4,
-  //       relative_time_description: "2 weeks ago",
-  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
-  //       time :1515877906,
-  //     },
-  //     {
-  //       author_name: "Kunal Pancholi",
-  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
-  //       language: "en",
-  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
-  //       rating: 4,
-  //       relative_time_description: "2 weeks ago",
-  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
-  //       time :1515877906,
-  //     },
-  //     {
-  //       author_name: "Ajay Bhandari",
-  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
-  //       language: "en",
-  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
-  //       rating: 4,
-  //       relative_time_description: "2 weeks ago",
-  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
-  //       time :1515877906
-  //     },
-  //     {
-  //       author_name: "Ankit Vijay",
-  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
-  //       language: "en",
-  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
-  //       rating: 4,
-  //       relative_time_description: "2 weeks ago",
-  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
-  //       time :1515877906
-  //     },
-  //     {
-  //       author_name: "Shivam Gera",
-  //       author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
-  //       language: "en",
-  //       profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
-  //       rating: 4,
-  //       relative_time_description: "2 weeks ago",
-  //       text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
-  //       time :1515877906
-  //     }
-  //   ],
-  //   thumbnail: 'https://lh3.googleusercontent.com/p/AF1QipNzSbmLqOLQOMYQW8sGSfM63LhAuA7EmaIdvcr_=w100-h100-k',
-  //   types: ['lodging', 'cafe' ],
-  //   url: 'https://nimeshjain.com',
-  //   vicinity: '341 W 36th St, New York, NY 10018, USA',
-  //   website: 'http://nimeshjain.com'
-  // }
+  {
+    formatted_address: '952, NYC, NY',
+    formatted_phone_number: '(212) 542-8990',
+    name: 'nimesh chains of hotels',
+    openingHours: {
+                    open_now: false,
+                    // periods:
+                  },
+    rating: '4.7',
+    reviews: [
+      {
+        author_name: "Nimesh Jain",
+        author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+        language: "en",
+        profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+        rating: 4,
+        relative_time_description: "2 weeks ago",
+        text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+        time :1515877906,
+      },
+      {
+        author_name: "Kunal Pancholi",
+        author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+        language: "en",
+        profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+        rating: 4,
+        relative_time_description: "2 weeks ago",
+        text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+        time :1515877906,
+      },
+      {
+        author_name: "Ajay Bhandari",
+        author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+        language: "en",
+        profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+        rating: 4,
+        relative_time_description: "2 weeks ago",
+        text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+        time :1515877906
+      },
+      {
+        author_name: "Ankit Vijay",
+        author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+        language: "en",
+        profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+        rating: 4,
+        relative_time_description: "2 weeks ago",
+        text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+        time :1515877906
+      },
+      {
+        author_name: "Shivam Gera",
+        author_url: "https://www.google.com/maps/contrib/101186634267073160192/reviews",
+        language: "en",
+        profile_photo_url: "https://lh3.googleusercontent.com/-DO4zi1McAyk/AAAAAAAAAAI/AAAAAAAAAMk/b0040iJJ3lc/s128-c0x00000000-cc-rp-mo-ba5/photo.jpg",
+        rating: 4,
+        relative_time_description: "2 weeks ago",
+        text: "Love the atmosphere and staff. Excellent. Great location in walking distance of times square. Rooms are interesting in size (small) but comfortable beds. Room was clean. Hope you like the color purple. Love the old TV themes they play in the elevators. Trippy. Would stay again and do recommend.  Very good location for food and drinks nearby.  I do recommend that they put ice buckets in the rooms.",
+        time :1515877906
+      }
+    ],
+    thumbnail: 'https://lh3.googleusercontent.com/p/AF1QipNzSbmLqOLQOMYQW8sGSfM63LhAuA7EmaIdvcr_=w100-h100-k',
+    types: ['lodging', 'cafe' ],
+    url: 'https://nimeshjain.com',
+    vicinity: '341 W 36th St, New York, NY 10018, USA',
+    website: 'http://nimeshjain.com'
+  }
 ];
 // NOTE:
 /*
@@ -176,6 +176,7 @@ var Place = function(data) {
   }
 
   self.formattedAddress = data.formatted_address;
+  self.geometry = data.geometry;
   self.internationalPhoneNumber = data.international_phone_number;
   self.icon = data.icon;
   self.openingHours = data.opening_hours;
@@ -220,6 +221,8 @@ var Place = function(data) {
   if(data.opening_hours) {
     self.openNow = data.opening_hours.open_now;
   }
+  // this will be later filled with flickr APIs
+  self.flickrPhotosArray = ko.observableArray([]);
 }
 
 //ViewModel

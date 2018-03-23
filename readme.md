@@ -19,3 +19,5 @@
 * when a new search it made, and user is on more details or reviews page, send him/her back
 * migrate from font-awesome to open iconic
 * add opening hours on place details pane
+
+* weather APIs

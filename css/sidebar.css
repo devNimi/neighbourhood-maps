@@ -100,7 +100,7 @@ transform: translateY(-100vh);
   text-align: center;
 }
 
-#sidebar-nav-close-button, #sidebar-nav-place-details-back-button, #sidebar-nav-place-review-back-button {
+#sidebar-nav-close-button, #sidebar-nav-place-details-back-button, #sidebar-nav-place-review-back-button, #sidebar-nav-place-flickr-photos-back-button {
   padding-left: 0.5em;
   cursor: pointer;
   font-size: 4vh;
@@ -108,7 +108,7 @@ transform: translateY(-100vh);
   float: left;
 }
 
-#sidebar-nav-close-button:hover, #sidebar-nav-place-details-back-button:hover, #sidebar-nav-place-review-back-button:hover {
+#sidebar-nav-close-button:hover, #sidebar-nav-place-details-back-button:hover, #sidebar-nav-place-review-back-button:hover, #sidebar-nav-place-flickr-photos-back-button:hover {
   color: var(--accent-color);
 }
 
@@ -219,14 +219,14 @@ transform: translateY(-100vh);
   text-overflow: ellipsis;
 }
 
-.read-reviews-button {
+.read-reviews-button, .show-flickr-photos-button {
   margin-top: 1em;
   color: var(--primary-color);
   background-color: transparent;
   background-image: none;
   border-color: var(--primary-color);
 }
-.read-reviews-button:hover {
+.read-reviews-button:hover, .show-flickr-photos-button:hover {
   cursor: pointer;
   color: var(--accent-color);
   border-color: : var(--accent-color)
@@ -236,7 +236,7 @@ transform: translateY(-100vh);
 #place-reviews-pane {
   display: none;
 }
-.place-list-container, .place-details-container, .place-reviews-container {
+.place-list-container, .place-details-container, .place-reviews-container, .place-flickr-photos-container {
   height: 92vh;
   overflow-y: auto;
 }
@@ -345,4 +345,23 @@ transform: translateY(-100vh);
 .section-review-text {
     line-height: 1.5;
     white-space: pre-wrap;
+}
+
+/* flickr photos pane */
+#flickr-photos-pane {
+  display: none;
+}
+.place-flickr-photos-inside-container {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+}
+
+.place-flickr-photos-inside-container a {
+  width: 100%;
+}
+.flickr-image-thumbnail {
+height: 250px;
+width: 100%;
+object-fit: cover;
 }

@@ -13,6 +13,7 @@
     width: 70vw;
     top: 0;
     right: -70vw;
+    /* right: 0vw; */
   }
   /* tranform sidebar and toggleButton as per it's new position */
   .toggle-side-bar {
@@ -50,5 +51,11 @@
     -ms-transform: translateX(-40vw) rotateZ(-180deg);
     -o-transform: translateX(-40vw) rotateZ(-180deg);
     transform: translateX(-40vw) rotateZ(-180deg);
+  }
+}
+
+@media screen and (min-width: 576px){
+  .place-flickr-photos-inside-container a {
+    width: 50%;
   }
 }

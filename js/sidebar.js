@@ -10,28 +10,22 @@ $(document).ready(function() {
     toggleSidebar();
   })
 
-  function toggleSidebar() {
-    // toggle sidebar in and off from user's screen
-    $('#sidebar-container').toggleClass('toggle-side-bar');
-    // animate/move chevron icon (sidebar button) accordingly
-    $('.toggle-sidebar-button').toggleClass('animate-toggle-sidebar-button');
-    // disable and enable click events on map and search background
-    $('#map,.search-bar-container').toggleClass('avoid-clicks');
-    // change opacity
-    $('#map, .search-bar-container').toggleClass('blur');
-
-  }
-
-  // shows the place-list-pane pane searched by user, hides the place details pane
+  // shows the place-list-pane searched by user, hides the place details pane
   $('#sidebar-nav-place-details-back-button').click(function(){
-    showPlaceListPane();
     hidePlaceDetailsPane();
+    showPlaceListPane();
   })
 
   // shows the place details pane, hides the review pane
   $('#sidebar-nav-place-review-back-button').click(function(){
-    showPlaceDetailsPane();
     hidePlaceReviewsPane()
+    showPlaceDetailsPane();
+  })
+
+  // shows the flickr photos pane, hides the review pane
+  $('#sidebar-nav-place-flickr-photos-back-button').click(function(){
+    hideFlickrPhotosPane();
+    showPlaceDetailsPane();
   })
 });
 
@@ -54,6 +48,29 @@ function showMoreDetails() {
     showPlaceReviewsPane();
   });
 
+  //TODO: this probably register new click function everytime more info is clicked, fix it
+  // when user click om review button
+  // make reuqest to Flickr APIs
+  $('#show-flickr-photos-button').click(function(){
+    console.log('click');
+    callFlickrAPI();
+    hidePlaceDetailsPane();
+    showFlickrPhotosPane();
+  })
+
+}
+
+
+function toggleSidebar() {
+  // toggle sidebar in and off from user's screen
+  $('#sidebar-container').toggleClass('toggle-side-bar');
+  // animate/move chevron icon (sidebar button) accordingly
+  $('.toggle-sidebar-button').toggleClass('animate-toggle-sidebar-button');
+  // disable and enable click events on map and search background
+  $('#map,.search-bar-container').toggleClass('avoid-clicks');
+  // change opacity
+  $('#map, .search-bar-container').toggleClass('blur');
+
 }
 
 function showPlaceListPane(){
@@ -75,4 +92,11 @@ function showPlaceReviewsPane(){
 };
 function hidePlaceReviewsPane(){
   $('#place-reviews-pane').css('display', 'none');
+};
+
+function showFlickrPhotosPane(){
+  $('#flickr-photos-pane').css('display', 'initial');
+};
+function hideFlickrPhotosPane(){
+  $('#flickr-photos-pane').css('display', 'none');
 };
