@@ -109,6 +109,19 @@ var placeData = [
 function activateSidebar(places, service) {
   // for a new search,  new 'places' array will be returned, placeData needs to be emptied
   placeData = [];
+  console.log(places);
+  // if no results were return
+  if (places.length === 0) {
+    //// TODO: repetative code, optimize
+    $('#error-message-enter-query').hide()
+    $('#place-list-error-message-no-results').show();
+    $('#place-list-loader').fadeOut('fast');
+    // update knockoutBinding
+    knockoutBinding.viewModel.updatePlaces();
+
+    return;
+  }
+
   places.forEach(function(place, index){
     /* to prevent OVER_QUERY_LIMIT, we'll wait for some time.....
     see the code snippet below for more info */
@@ -140,8 +153,8 @@ function activateSidebar(places, service) {
       }, 5000);
     } else {
       getDetailsFromService();
-      // once few result are loaded, we can remove the remove the loader
-      if (index === 9) {
+      // once q result is returned, we can remove the remove the loader
+      if (index === 1) {
         // NOTE: this happens really fast, you'll probably not even notice the loader, try to throttle your network to 3G slow
         $('#place-list-loader').fadeOut('fast');
       }
@@ -165,7 +178,9 @@ function activateSidebar(places, service) {
   hidePlaceDetailsPane();
   hidePlaceReviewsPane();
   showPlaceListPane();
-  $('.sidebar-error-message').hide();
+  // TODO: repetative code, optimise
+  $('#place-list-error-message-no-results').hide();
+  $('#error-message-enter-query').hide();
 }
 
 // each Place in knockout observable array have following

@@ -125,6 +125,9 @@ transform: translateY(-100vh);
     padding: 2em;
     color: var(--dark-primary-color);
 }
+#flickr-error-message-no-results, #place-list-error-message-no-results {
+  display: none;
+}
 .sidebar-card {
   margin: 0.3em 0.3em;
   box-shadow: 0.5px 0.5px 1px 0.5px #bdbdbd57;

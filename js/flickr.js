@@ -26,12 +26,14 @@ var callFlickrAPI = function(){
     $.each(data.photos.photo, function(i,item){
       var imgSrc = 'https://farm' + item.farm +  '.staticflickr.com/' + item.server + '/' + item.id + '_' + item.secret + '.jpg';
       currentPlace.flickrPhotosArray.push(imgSrc);
-      $('.flickr-loader').fadeOut();
+      $('#flickr-loader').fadeOut();
     });
-    // $('.flickr-loader').fadeOut();
+    // $('#flickr-loader').fadeOut();
     console.log(currentPlace.flickrPhotosArray);
   }).fail(function(e){
     // TODO: handle the case and let the user know
+    $('#flickr-error-message-no-results').show();
+    $('#flickr-loader').fadeOut();
     console.log('request to flickr APIs failed with status - ' + e.status);
   });
 

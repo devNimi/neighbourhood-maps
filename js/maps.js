@@ -29,7 +29,6 @@ function initMap() {
       // if location foound set to it to map
       map.setCenter(pos);
       map.setZoom(15);
-      map.fitBounds(bounds);
 
     }, function() {
       // handleLocationError(true, locationErrorInfoWindow, map.getCenter());

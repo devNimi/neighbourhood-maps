@@ -76,12 +76,12 @@
 
     <div id="sidebar-container">
       <div id="place-list-pane">
-        <!-- TODO: fix it's top, let the content scroll not this navbar -->
         <div class="sidebar-nav">
           <span id="sidebar-nav-close-button" class="oi oi-x animated pulse infinite"></span>
           <span class="sidebar-nav-title">Search Results</span>
         </div>
-        <p class="lead sidebar-error-message"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> please enter a search query</p>
+        <p class="lead sidebar-error-message" id="error-message-enter-query"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> please enter a search query</p>
+        <p class="lead sidebar-error-message" id="place-list-error-message-no-results"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> No results were returned<br> please try a diffrent query</p>
         <div class="loader" id="place-list-loader">
           <div class="dot"></div>
           <div class="dot"></div>
@@ -235,8 +235,9 @@
         </div>
         <!-- currentPlace context needs to be set again -->
         <div class="place-flickr-photos-container" data-bind="with: currentPlace()">
+          <p class="lead sidebar-error-message" id="flickr-error-message-no-results"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> No results were returned<br> please try a diffrent query<br> Or check your internet connection</p>
           <!-- pre-loader, loads until data is fetched from flickr APIs -->
-          <div class="loader flickr-loader">
+          <div class="loader" id="flickr-loader">
             <div class="dot"></div>
             <div class="dot"></div>
             <div class="dot"></div>
