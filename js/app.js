@@ -136,11 +136,16 @@ function activateSidebar(places, service) {
       setTimeout(function(){
         // all requests to placesService after the 10th request will be dispatched after 5 seconds of delay
         // knockout will take care of adding the list for us
-        // TODO: add a spiner to let user know
-        getDetailsFromService()
+        getDetailsFromService();
       }, 5000);
     } else {
-      getDetailsFromService()
+      getDetailsFromService();
+      // once few result are loaded, we can remove the remove the loader
+      if (index === 9) {
+        // NOTE: this happens really fast, you'll probably not even notice the loader, try to throttle your network to 3G slow
+        $('#place-list-loader').fadeOut('fast');
+      }
+
     }
 
     function getDetailsFromService() {

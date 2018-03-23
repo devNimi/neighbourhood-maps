@@ -82,6 +82,13 @@
           <span class="sidebar-nav-title">Search Results</span>
         </div>
         <p class="lead sidebar-error-message"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> please enter a search query</p>
+        <div class="loader" id="place-list-loader">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
         <div class="place-list-container" data-bind="foreach: placeList">
           <div class="card sidebar-card">
             <div class="card-body">
@@ -113,7 +120,6 @@
           <span id="sidebar-nav-place-details-back-button" class="oi oi-arrow-left animated pulse infinite"></span>
           <span class="sidebar-nav-title">Place Details</span>
         </div>
-
         <div class="card" data-bind="with: currentPlace()">
           <div class="place-details-container">
             <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
@@ -229,6 +235,14 @@
         </div>
         <!-- currentPlace context needs to be set again -->
         <div class="place-flickr-photos-container" data-bind="with: currentPlace()">
+          <!-- pre-loader, loads until data is fetched from flickr APIs -->
+          <div class="loader flickr-loader">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
           <div class="place-flickr-photos-inside-container" data-bind="foreach: flickrPhotosArray">
             <a data-fancybox="gallery" data-bind="attr: {href: $data}">
               <img class="img-fluid img-thumbnail flickr-image-thumbnail" data-bind="attr:{src: $data}">

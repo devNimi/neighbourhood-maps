@@ -67,6 +67,11 @@ function onPlaceChange() {
   // console.log(places);
 
   createPlaceMarkers(places);
+  // add the loader to place-list-pane untill results loads
+  // this loader will be fade out in app.js, loader is hidden by default, see sidebar.CSS
+  // TODO: fix this :)
+  // NOTE: this happens really fast, you'll probably not even notice the loader, try to throttle your network to 3G slow
+  $('#place-list-loader').fadeIn('fast');
   // pass in place data to knockout data model, which in turns activate the sidebar
   activateSidebar(places, service);
 }

@@ -21,3 +21,5 @@
 * add opening hours on place details pane
 
 * weather APIs
+
+* make color place holder for images, until images are completely downloaded, starting with flickr API images: https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/
