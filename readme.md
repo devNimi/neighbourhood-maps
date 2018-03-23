@@ -22,4 +22,8 @@
 
 * weather APIs
 
-* make color place holder for images, until images are completely downloaded, starting with flickr API images: https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/
+* make colour place holder for images, until images are completely downloaded, starting with flickr API images, carousel images, place thumbnail images in place-list pane: https://www.sitepoint.com/five-techniques-lazy-load-images-website-performance/
+
+* one time pop up messages for user to let them know how app works, a tour sort of
+
+* ask for user location responsibly https://developers.google.com/web/fundamentals/native-hardware/user-location/

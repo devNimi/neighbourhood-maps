@@ -1,4 +1,4 @@
-var map, places, placeDetailsInfoWindow;
+var map, places, locationErrorInfoWindow, placeDetailsInfoWindow;
 var searchBox;
 var service;
 var markers = [];
@@ -8,7 +8,7 @@ function initMap() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.7413549, lng: -73.9980244},
-    zoom: 13,
+    zoom: 10,
     mapTypeId: 'roadmap',
     mapTypeControl: false,
     panControl: false,
@@ -16,6 +16,38 @@ function initMap() {
     streetViewControl: false,
     fullscreenControl: false
   });
+
+  locationErrorInfoWindow = new google.maps.InfoWindow;
+  // Try HTML5 geolocation to get user location.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      // if location foound set to it to map
+      map.setCenter(pos);
+      map.setZoom(15);
+      map.fitBounds(bounds);
+
+    }, function() {
+      // handleLocationError(true, locationErrorInfoWindow, map.getCenter());
+      console.log('user\'s location found');
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, locationErrorInfoWindow, map.getCenter());
+  }
+
+
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: Enter desired location in search bar' :
+                        'Error: Your browser doesn\'t support geolocation. Please enter desired location in search bar');
+  infoWindow.open(map);
+  }
 
   //info window for searced 'place details'
   placeDetailsInfoWindow = new google.maps.InfoWindow({
